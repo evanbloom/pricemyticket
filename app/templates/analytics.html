@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+
+    <!-- Slider-->
+    <link href="../static/css/slider.css" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/paper/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../static/css/style.css" rel="stylesheet">
+
+
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index">Price My Ticket</a>
+        </div>
+        <div class="collapse navbar-collapse pull-right">
+          <ul class="nav navbar-nav">
+            <li><a href="/index">Home</a></li>
+            <li class="active"><a href="/analytics">Analytics</a></li>
+            <li><a href="/slides">Slides</a></li>
+            <li><a href="/contact">About Me</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
+
+
+    <div> <!-- /.container -->
+      <div class="col-md-12">
+        <div class="panel panel-primary" >
+          <div class="panel-heading">
+             <h5>Selling Tickets</h5> 
+           </div>
+            <div class="panel-body">
+              <div class="col-md-3 well">
+                   <h6>Though buying and selling tickets to a baseball game may seem simple, a baseball game is a complex market environment. Every ticket has a differrent value, which can vary for each game and each point in time. This page helps explain some variation between ticket prices which drive the ticket prices. On the is a map of AT&T park. The price of a ticket depends a lot on where in the stadium it is.
+                   </h6> 
+              </div>
+              <div class="col-md-9">
+                <div class="text-center">
+                  <img class="seating_map" src="http://sanfrancisco.giants.mlb.com/sf/images/ballpark/y2012/seating_map_1000x688.jpg">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+         <div class="col-md-12">
+        <div class="panel panel-primary" >
+          <div class="panel-heading">
+             <h5>Variation Between Sections</h5> 
+           </div>
+            <div class="panel-body">
+              <div class="col-md-3 well">
+                   <h6>This graphic shows the variation in ticket price between sections. The darkness of each cell is the difference in average price between the section on the horizontal axis and the the vertical axis. The lighter shaded cells are similarly priced cells are similarly prices sections, and the darker cells are very differeny sections. <br><br> As you can see the are two primary clusters price the differental. There are the expensive tickets, in the lower deck near the field, and the cheaper tickets in other seactions. These cheaper tickets really include two primary clusders, the bleachers and the upper deck. <br><br> Of course, it is not surpising that the selling price of the ticket changes with its location in the stadium. However, this graphics demonstrate the choices that consumers make, and the sellers must respond to. Each ticket in the stadium is an imperfect subsitute for every other ticket, and this provides a way to visualizes the choices in the market  </h6> 
+              </div>
+              <div class="col-md-9">
+                <div class="text-center">
+                  <div id="section_matrix"></div> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+         <div class="col-md-12">
+        <div class="panel panel-primary" >
+          <div class="panel-heading">
+             <h5>Variation Between Seats</h5> 
+           </div>
+            <div class="panel-body">
+              <div class="col-md-3 well">
+                   <h6>This graphic shows the variation between seats with in a section. As you can see there are much less clear patterns in the relationship between prices and seats. This suggests that when comparing seats within a section, other factors betsides the location in the stadium can be important drivers of price. For example, the time before the game, or seats next to one another may prove to be important. <br><br> In fact, the random forest model supports this finding. Deck and section are the two most important predictors of the selling  prices of ticket. <br><br> These findings also help explain why a random forrest model may be a better predicotr than the K-nearest-neighbors approach. There is a fair amount of variation between individual tickets, and the nearest neighbors may not be a great predictors of price. However, the tree model is very intituitive, as buyers will probaby consider at a high level which sections are likely to be affordable. Then they will dive a little deeper for tickets that meet their specific needs</h6> 
+              </div>
+              <div class="col-md-9">
+                <div class="col-md-6">
+                  <h5>Tickets Behind Home Plate </h5>
+                  <div class="text-center">
+                   <div id="matrix_test_177"></div> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+    </div><!-- /.container -->
+ </body>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/bootstrap-slider.js"></script>
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.1.0.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/bootstrap-slider.js"></script>
+
+
+    <script >$("#heatmap").load("heatmap");</script>
+    <script >$("#section_matrix").load("test");</script>
+    <script >$("#matrix_test_177").load("matrix2");</script>

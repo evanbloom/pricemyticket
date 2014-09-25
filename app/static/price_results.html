@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!-- saved from url=(0107)http://127.0.0.1:5000/price_results?event_id=Padres+at+Giants+%28September+28%29&section=317&row=23&seat=14 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+		<style>
+			/* tell the SVG path to be a thin blue line without any area fill */
+			path {
+				stroke: steelblue;
+				stroke-width: 1;
+				fill: none;
+			}
+			
+			.axis {
+			  shape-rendering: crispEdges;
+			}
+ 
+			.x.axis line {
+			  stroke: lightgrey;
+			}
+ 
+			.x.axis .minor {
+			  stroke-opacity: .5;
+			}
+ 
+			.x.axis path {
+			  display: none;
+			}
+ 
+			.y.axis line, .y.axis path {
+			  fill: none;
+			  stroke: #000;
+			}
+		</style>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://127.0.0.1:5000/static/css/bootstrap.min.css" rel="stylesheet">
+
+	 <!-- Bootstrap core CSS -->
+    <link href="http://127.0.0.1:5000/static/css/slider.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="http://127.0.0.1:5000/static/css/index-template.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://127.0.0.1:5000/">Price My Ticket</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://127.0.0.1:5000/">Home</a></li>
+            <li><a href="http://127.0.0.1:5000/price_results?event_id=Padres+at+Giants+%28September+28%29&section=317&row=23&seat=14#about">About</a></li>
+            <li><a href="http://127.0.0.1:5000/price_results?event_id=Padres+at+Giants+%28September+28%29&section=317&row=23&seat=14#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+	<div class="container">
+		<br><br><br>
+		
+        
+		
+		<div class="index-template">
+			<div class="row">
+				<div class="col-md-12"> <h3>It is  9 days, 0 hours 22 minutes until your game </h3></div> 
+				<div class="col-md-12"> <h3>The profit maximizing price is  44 dollars </h3></div> 
+				<div class="col-md-12"> <h3> </h3></div> 
+		<br>
+		<br>
+		<br>
+		<br>
+		<p class="lead"> Enter the level of certainty you desire in selling your ticket
+			</p><div class="well">
+				<div class="slider slider-horizontal" id="ex1Slider" style="width: 154px;"><div class="slider-track"><div class="slider-selection" style="left: 0%; width: 70%;"></div><div class="slider-handle round" style="left: 70%;"></div><div class="slider-handle round hide" style="left: 0%;"></div></div><div class="tooltip top" style="top: -30px; left: 92.8px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">70</div></div><input id="ex1" data-slider-id="ex1Slider" value="50" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="5" data-slider-value="50"></div>
+			  	<span id="ex1CurrentSliderValLabel"> <span id="ex1SliderVal">70</span> Percent Certain</span>
+			  </div>
+			<div class="my_container">
+				<div class="col-md-12"> <h3> </h3></div> 
+
+
+<!-- 	this is where the ajax puts stuff	 -->	
+				<h3>
+					The certain price is: $<span id="certain_price">11</span>
+				</h3>
+				
+<!-- 						<div id="graph" style="width: 100%; height: 500px;"></div>
+				
+				
+		<div id="chartContainer">
+ 				 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+ 				 <script src="http://dimplejs.org/dist/dimple.v2.1.0.min.js"></script>
+ 				 <script type="text/javascript">
+ 		var svg = dimple.newSvg("#chartContainer", 590, 400);
+   					var data = [ 		
+		
+		{ "x": 100, "y": 0.9 },
+		
+		{ "x": 150, "y": 0.8 },
+		
+		{ "x": 160, "y": 0.5 },
+		
+		{ "x": 200, "y": 0.2 },
+		
+	]; 
+
+function dimplot(
+      // Create and Position a Chart
+     	 var myChart = new dimple.chart(svg, data);
+     	 myChart.setBounds(60, 30, 500, 300);
+     	 var x = myChart.addMeasureAxis("x", "x")
+      	myChart.addPctAxis("y", "y");
+
+        x.overrideMax= d3.max(data, function(d) { return d.x })
+ 		x.overrideMin= d3.min(data, function(d) { return d.x })
+
+
+     	 // Add a thick line with markers
+     	 var lines = myChart.addSeries(["key", "group"], dimple.plot.bubble); 
+     	 lines.lineWeight = 5;
+      	lines.lineMarkers = true;
+
+      	// Draw the chart
+     	 myChart.draw(); -->
+
+  
+</div>
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./price_results_files/jquery-1.11.0.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="./price_results_files/dimple.v2.1.0.min.js"></script>
+    <script src="./price_results_files/bootstrap.min.js"></script>
+    <script src="./price_results_files/bootstrap-slider.js"></script>
+    <script>
+ 	$(document).ready(function($) { 
+ 	
+    	get_certain_price(50);
+    
+		$('#ex1').slider({
+			formatter: function(value) {
+				return  value +'Percent Certain';
+			}
+		});
+		
+		$("#ex1").slider();
+		$("#ex1").on("slideStop", function(slideEvt) {
+			$("#ex1SliderVal").text(slideEvt.value);
+			var certainty = slideEvt.value
+			get_certain_price(certainty);
+
+		});
+	});
+	
+	function get_certain_price(certainty) {
+	
+		$.ajax({
+			method: 'GET',
+			url: '/certain_price_json',
+			data: { 
+				percent_certain: certainty,
+				'game_name_tag':"Padres at Giants (September 28)", 
+				'section' :317,
+				'seat':14,
+				'row': 23
+			},
+			success: function(response) {
+				$("#certain_price").text(response.result);
+			}
+		});
+		
+	}
+	
+	function debounce(func, wait, immediate) {
+		var timeout;
+		return function() {
+			var context = this, args = arguments;
+			var later = function() {
+				timeout = null;
+				if (!immediate) func.apply(context, args);
+			};
+			var callNow = immediate && !timeout;
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+			if (callNow) func.apply(context, args);
+		};
+	};
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// D3 calculation of graph
+	// Dimensions of graph
+	var m = [80, 80, 80, 80]; // margins
+	var w = 1000 - m[1] - m[3]; // width
+	var h = 400 - m[0] - m[2]; // height
+	
+	// Data for the graph
+	var data = [ 		
+		
+		{ "x": 100, "y": 0.9 },
+		
+		{ "x": 150, "y": 0.8 },
+		
+		{ "x": 160, "y": 0.5 },
+		
+		{ "x": 200, "y": 0.2 },
+		
+	]; 
+	
+	var max_price = d3.max(data, function(d) { return d.x });
+	var min_price = d3.min(data, function(d) { return d.x });
+	var max_confidence = d3.max(data, function(d) { return d.y });
+	var min_confidence = d3.min(data, function(d) { return d.y });
+	
+	var x = d3.scale.linear().domain([min_price, max_price]).range([0, w]);
+	var y = d3.scale.linear().domain([min_confidence, max_confidence]).range([h, 0]);
+ 	
+ 	var line = d3.svg.line()
+ 		.x(function(d) {
+ 			return x(d.x);
+ 		})
+ 		.y(function(d) {
+ 			return y(d.y);
+ 		});
+ 		
+
+ 		
+ 	var graph = d3.select("#graph")
+ 		.append("svg:svg")
+ 			.attr("width", w + m[1] + m[3])
+ 			.attr("height", h + m[0] + m[2])
+ 		.append("svg:g")
+ 			.attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+ 			
+ 		 			// create yAxis
+			var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(true);
+			// Add the x-axis.
+			graph.append("svg:g")
+			      .attr("class", "x axis")
+			      .attr("transform", "translate(0," + h + ")")
+			      .call(xAxis);
+ 
+ 
+			// create left yAxis
+			var yAxisLeft = d3.svg.axis().scale(y).ticks(data.length).orient("left");
+			// Add the y-axis to the left
+			graph.append("svg:g")
+			      .attr("class", "y axis")
+			      .attr("transform", "translate(-25,0)")
+			      .call(yAxisLeft);
+			      
+ graph.append("svg:path")
+ 		.attr("d", line(data))
+ 		.attr("stroke", "blue")
+ 		.attr("stroke-width", 2)
+ 		.attr("fill", "none");
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 	</script>
+ 
+ 
+ 
+ 
+ 
+ 
+</body></html>

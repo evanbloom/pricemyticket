@@ -1,0 +1,124 @@
+.homepage_photo {
+	background-image:url("ATT_Background.jpg");
+	background-size:cover;
+	background-position:center;
+	height:500px;
+	position: relative;
+	background-attachment: fixed;
+}
+
+.homepage_photo_overlay {
+	opacity: .5;
+    background-color: black;
+    position: absolute;
+    left: 0; 
+    top: 0; 
+    bottom: 0;
+    right: 0;
+}
+
+.homepage_photo_text {
+	padding-top:200px;
+	font-size:27px;
+	color:white;
+	text-align:center;
+	position:relative;
+}
+
+.homepage_photo_header {
+	font-size:50px;
+}
+
+.hompage_description_text {
+	line-height:31px;
+}
+
+#chart {
+	height:100px;;
+}
+
+
+
+.ticket_pricing_app {
+	margin-top:30px;
+	margin-bottom:60px;
+}
+
+.panel-heading {
+	background-color: #FAC09A !important;
+}
+
+.buttonbox .input {
+	border:1px solid #ddd;
+	border-radius:5px;
+	box-shadow:none;
+}
+
+#event_id {
+	height: 31px;
+}
+
+#querymaker {
+	background-color: #FAC09A !important;
+	color:black
+}
+
+#slider_box {
+	margin-bottom: 10px !important;
+	margin-top:10px !important;
+}
+
+#ex1Slider {
+	width:100% !important;
+}
+
+.tooltip.top .tooltip-arrow {
+	color: #FAC09A 
+}
+
+.panel-body-text {
+	display: none;
+}
+
+.min-size {
+	min-height:490px;
+}
+
+.ticket_icon {
+	width: 50%;
+	opacity: .7;
+}
+
+.seating_map {
+	width: 60%;
+	opacity: 1;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.control-label{
+	font-size:14px;
+}
+
+.well{
+	padding-top:4px !important;
+}
+
+
+
+#slide_holder {
+	padding-top=50;
+	padding-bottom=100;
+	height:90%;
+	width:90%;
+
+}
+
+#slides {
+	height:100%;
+	width:100%;
+}
+
+
