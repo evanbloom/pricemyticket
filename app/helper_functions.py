@@ -66,8 +66,8 @@ def price_opt(game_name_tag, section, seat, row, prob_threshold=.5):
 	#This loads the random forrests fit models in the database
 	#Remember to make this relative before pulling online
 	########FIX ME#################
-	seat_forrest= joblib.load('/Users/theblooms/Desktop/insight/seat_forrest.pkl') 
-	probs = joblib.load('/Users/theblooms/Desktop/insight/prob_forrest.pkl') 
+	seat_forrest= joblib.load('.//RFpickle//seat_forrest.pkl') 
+	probs = joblib.load('.//RFpickle//prob_forrest.pkl') 
 	
 	
 	#This parses the Section Information (uploaded from a ticket, into a section and a deck)
