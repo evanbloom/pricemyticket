@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <style>
 
-
+@import url("http://bost.ocks.org/mike/style.css?aea6f0a?aea6f0a");
 
 .background {
   fill: #eee;
@@ -15,27 +15,35 @@ line {
 text.active {
   fill: red;
 }
+
+
+
+
 </style>
-<div>
+<link href="../static/css/style.css" rel="stylesheet">
+<script src="http://d3js.org/d3.v2.min.js?2.8.1"></script>
+
+
 <header>
 </header>
 
-<div style="margin-top:10px;">
-    <p style="font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Order: 
-      <select id="order" style="background-color: #fff; border: 1px solid #ddd;
-      box-shadow: none; font-size: 14px;">
-         <option value="section">by section</option>
-       <option value="price">by price</option>
-    </select>
-  </div>
-<script>
 
+<div style="margin-top:0px;">
+<p style="font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Order: <select id="order" style="background-color: #fff; border: 1px solid #ddd;
+box-shadow: none; font-size: 14px;">
+  <option value="section">by row and seat</option>
+  <option value="price">by price</option>
+</select>
+</div>
+
+<script>
+0
 var margin = {top: 30, right: 0, bottom: 10, left: 30},
-    width = 500,
-    height = 500;
+    width = 370,
+    height = 370;
 
 var x = d3.scale.ordinal().rangeBands([0, width]),
-    z = d3.scale.linear().domain([0, 75x]).clamp(true),
+    z = d3.scale.linear().domain([0, 200]).clamp(true),
     c = d3.scale.category10().domain(d3.range(10));
 
 var svg = d3.select("body").append("svg")
@@ -47,7 +55,7 @@ var svg = d3.select("body").append("svg")
 
 
 
-d3.json("/static/price_dif.json", function(miserables) {
+d3.json("/static/price_dif_117.json", function(miserables) {
   var matrix = [],
       nodes = miserables.nodes,
       n = nodes.length;
@@ -94,8 +102,7 @@ d3.json("/static/price_dif.json", function(miserables) {
       .attr("x2", width);
 
   row.append("text")
-      .attr("font-size","5px")
-      .attr("x", -5)
+      .attr("x", -6)
       .attr("y", x.rangeBand() / 2)
       .attr("dy", ".32em")
       .attr("text-anchor", "end")
@@ -111,8 +118,7 @@ d3.json("/static/price_dif.json", function(miserables) {
       .attr("x1", -width);
 
   column.append("text")
-      .attr("font-size","5px")
-      .attr("x", 5)
+      .attr("x", 6)
       .attr("y", x.rangeBand() / 2)
       .attr("dy", ".32em")
       .attr("text-anchor", "start")
@@ -164,11 +170,11 @@ d3.json("/static/price_dif.json", function(miserables) {
   }
 
   var timeout = setTimeout(function() {
-    order("section");
+    order("group");
     d3.select("#order").property("selectedIndex", 2).node().focus();
   }, 5000);
 });
 
 </script>
-</div>
+
 

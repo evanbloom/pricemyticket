@@ -135,17 +135,17 @@
 											<div class="col-md-6">
 												<input id="ex1" data-slider-id='ex1Slider' value="50" type="text" data-slider-min="35" data-slider-max="64" data-slider-step="1" data-slider-value="50" data-slider-tooltip="Hide"> 
 											</div>
-											<div class="col-md-3 form-tooltip" style="padding-left:0px;"title="People rarely post tickets that have greater than a 65 percent chance of selling" data-toggle="tooltip" data-placement="top">Most Sure</div>
+											<div class="col-md-3" style="padding-left:0px;"> Most Sure</div>
 										</div>
-										<div><h6> You should list the ticket price for $<span id="certain_price"></span> </h6></div>
-										<div><h6> There is a <span id="ex1SliderVal"></span> percent chance you will sell the ticket at this price </h6></div>
+										<div class="price_result"><h6> You should list the ticket price for <b> $<span id="certain_price"> </b></span> </h6></div>
+										<div class="price_result"><h6> There is a <b> <span  id="ex1SliderVal">50</span> percent </b> chance you will sell the ticket at this price </h6></div>
 									</div>
 									<br>
 									<div class="well">
 										<div ><h5>Expert Advice</h5></div> 
-										<div class= "form-tooltip" title="If you sell many tickets, selling it at this price will lead to the most money in the long run. However sometimes you may not sell your ticket." data-toggle="tooltip" data-placement="top" > <h6 id="text1"></h6></div> 
+										<div> <h6 id="text1"></h6></div> 
 										<div> <h6 id="text1b"></h6></div> 
-										<div class= "form-tooltip" title="When tickets like this are sold, they are generally sold for this price" data-toggle="tooltip" data-placement="bottom"  > <h6 id="text2"></h6></div> 
+										<div> <h6 id="text2"></h6></div> 
 								</div>
 							</div>
 					 </div>
@@ -174,10 +174,11 @@
 	  	$(".ticket_icon").hide(2500);
 		});
 		
-	$('#ex1').slider();
+	var price_slider =$('#ex1').slider();
 	
 
 	$("#ex1").on("slideStop", function(slideEvt) {
+			$(".price_result").css('visibility', 'hidden');
 			$("#ex1SliderVal").text(slideEvt.value);
 			var certainty = slideEvt.value
 			get_certain_price(certainty);
@@ -200,6 +201,7 @@
 				$("#text1").text(data.text1);
 				$("#text1b").text(data.text1b);
 				$("#text2").text(data.text2);
+				get_certain_price($('#ex1').val());
 			}
 			}) ;     
 		});
@@ -214,13 +216,14 @@
 			url: '/certain_price_json',
 			data: { 
 				percent_certain: certainty,
-				'game_name_tag': $("#event_id").val() || 'Padres at Giants (September 28)', 
+				'event_id': $("#event_id").val() || 'Padres at Giants (September 28)', 
 				'section': $("#section").val() || 317,
 				'seat': $("#seat").val() || 1,
 				'row': $("#row").val() || 12
 			},
 			success: function(response) {
 				$("#certain_price").text(response.result);
+				$(".price_result").css('visibility', 'visible');
 			}
 		});
 		

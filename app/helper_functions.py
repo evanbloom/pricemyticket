@@ -142,9 +142,9 @@ def price_opt(game_name_tag, section, seat, row, prob_threshold=.5):
 		text0= "This game has already occured, but you can explore anyway!"
 	else:
 		text0 = "It is  %s days, %s hours %s minutes until your game" %(t_minus_days, t_minus_hours, t_minus_minutes)
-	text1 = "If you sell tickets frequently and want to maximize your expected earnings you should sell it for $ %s" %str(max_expected_value_price)
-	text1b = "There is a %s precent chance the ticket sells at this price" %str(max_expected_value_prob)
-	text2 = "Using this price, you would earn an additional $ %s compared to the typical seller" %str(int(max_expected_value_price-adjusted_sale_price))
+	text1 = "If you sell tickets frequently and want to maximize your expected earnings you should sell it for $%s" %str(max_expected_value_price)
+	text1b = "There is a %s percent chance the ticket sells at this price" %str(max_expected_value_prob)
+	text2 = "Using this price, you would earn an additional $%s compared to the typical seller" %str(int(max_expected_value_price-adjusted_sale_price))
 
 
 	#This returns the resul in a list 

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Les MisÃ©rables Co-occurrence</title>
 <style>
 
 @import url("http://bost.ocks.org/mike/style.css?aea6f0a?aea6f0a");
@@ -29,19 +28,19 @@ text.active {
 </header>
 
 
-<aside style="margin-top:80px;">
+<div style="margin-top:0px;">
 <p style="font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Order: <select id="order" style="background-color: #fff; border: 1px solid #ddd;
 box-shadow: none; font-size: 14px;">
-  <option value="price">by price</option>
   <option value="section">by row and seat</option>
+  <option value="price">by price</option>
 </select>
-</aside>
+</div>
 
 <script>
-
-var margin = {top: 80, right: 0, bottom: 10, left: 80},
-    width = 720,
-    height = 720;
+0
+var margin = {top: 30, right: 0, bottom: 10, left: 30},
+    width = 370,
+    height = 370;
 
 var x = d3.scale.ordinal().rangeBands([0, width]),
     z = d3.scale.linear().domain([0, 50]).clamp(true),
@@ -104,6 +103,7 @@ d3.json("/static/price_dif_315.json", function(miserables) {
 
   row.append("text")
       .attr("x", -6)
+      .attr("font-size","5px")
       .attr("y", x.rangeBand() / 2)
       .attr("dy", ".32em")
       .attr("text-anchor", "end")
@@ -119,6 +119,7 @@ d3.json("/static/price_dif_315.json", function(miserables) {
       .attr("x1", -width);
 
   column.append("text")
+      .attr("font-size","5px")
       .attr("x", 6)
       .attr("y", x.rangeBand() / 2)
       .attr("dy", ".32em")

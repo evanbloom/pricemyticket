@@ -17,6 +17,10 @@
     right: 0;
 }
 
+.form-control {
+	border-color: #ddd;
+}
+
 .homepage_photo_text {
 	padding-top:200px;
 	font-size:27px;
@@ -120,5 +124,21 @@
 	height:100%;
 	width:100%;
 }
+#section_d3 {
+	height:100%;
+	width:100%;
+}
 
+.d3_holder{
+	height:500px;
+}
 
+.section_d3 {
+	height:100%;
+	width:100%;
+}
+
+#epic {
+	width: 60%;
+	opacity: 1;
+}

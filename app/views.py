@@ -33,12 +33,12 @@ def analytics():
 
 @app.route('/test')
 def matrix_test():
-	return render_template("matrix_test.html")
+	return render_template("section_matrix.html")
 
 
 @app.route('/matrix2')
 def matrix_test2():
-	return render_template("matrix_test_177.html")
+	return render_template("matrix_test_117.html")
 
 @app.route('/matrix3')
 def matrix_test3():
@@ -55,8 +55,17 @@ def heat():
 	return render_template("heatmap.html")
 
 @app.route('/slides')
-def sides():
+def slides():
 	return render_template("slides.html")
+
+
+@app.route('/prob_curve')
+def probcurve():
+	return render_template("prob_curve.html")
+
+@app.route('/contact')
+def contact():
+	return render_template("contact.html")
 
 
 
