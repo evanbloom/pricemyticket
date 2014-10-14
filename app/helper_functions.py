@@ -21,6 +21,8 @@ def price_opt(game_name_tag, section, seat, row, prob_threshold=.5):
 		query_results = cur.fetchall()
 		for result in query_results:
 			events_data.append(result)
+
+
 	
 	events_data=events_data[0]
 	
@@ -146,7 +148,7 @@ def price_opt(game_name_tag, section, seat, row, prob_threshold=.5):
 	text1b = "There is a %s percent chance the ticket sells at this price" %str(max_expected_value_prob)
 	text2 = "Using this price, you would earn an additional $%s compared to the typical seller" %str(int(max_expected_value_price-adjusted_sale_price))
 
-
+	db.close()
 	#This returns the resul in a list 
 	out= {
 		'text0':text0, 

@@ -7,18 +7,20 @@ import pandas as pd
 import numpy as np
 from helper_functions import price_opt
 
-db = mdb.connect(user="root", host="localhost", passwd='FsI786h4', db="ticketpricedb", charset='utf8')
+
 
 @app.route('/')
 @app.route('/index')
 def index():
 	event_ids = []
+	db = mdb.connect(user="root", host="localhost", passwd='FsI786h4', db="ticketpricedb", charset='utf8')
 	with db:
 		cur = db.cursor()
 		cur.execute("SELECT game_name FROM event_char;")
 		query_results = cur.fetchall()
 		for result in query_results:
 			event_ids.append(result[0])
+	db.close()
 
 	data = {
 		"event_ids": event_ids
